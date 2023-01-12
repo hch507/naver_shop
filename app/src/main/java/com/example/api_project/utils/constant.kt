@@ -3,6 +3,12 @@ package com.example.api_project.utils
 object constant {
     const val TAG : String ="로그"
 }
+enum class RESPONSESTATE{
+    OkAY,
+    FALSE
+}
+
+
 object API {
     const val BASE_URL : String = "https://openapi.naver.com/v1/"
 

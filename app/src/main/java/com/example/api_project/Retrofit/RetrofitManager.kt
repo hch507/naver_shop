@@ -3,6 +3,7 @@ package com.example.api_project.Retrofit
 import android.util.Log
 import com.example.api_project.Model.Item
 import com.example.api_project.utils.API
+import com.example.api_project.utils.RESPONSESTATE
 import com.google.gson.JsonElement
 import retrofit2.Call
 import retrofit2.Response
@@ -16,7 +17,7 @@ class RetrofitManager {
     }
     private var iRetrofit : IRetrofit? = RetrofitClient.getRetrifitClient(API.BASE_URL)?.create(IRetrofit::class.java)
 
-    fun search(searchTerm : String ,completion : (ArrayList<Item>) -> Unit){
+    fun search(searchTerm : String ,completion : (RESPONSESTATE, ArrayList<Item>) -> Unit){
         Log.d(TAG, "RetrofitManager-search() called $searchTerm")
         val call = iRetrofit?.searchShop(client_id = API.Client_ID, client_secret = API.Client_Secret, searhTerm = searchTerm, display = 10).let{
             it
@@ -44,7 +45,7 @@ class RetrofitManager {
                                 itemArrayList.add(itemArray)
                             }
                         }
-                        completion(itemArrayList)
+                        completion(RESPONSESTATE.OkAY,itemArrayList)
                     }
 
                 }
