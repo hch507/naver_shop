@@ -2,6 +2,7 @@ package com.example.api_project.utils
 
 object constant {
     const val TAG : String ="로그"
+    const val blank : String =" "
 }
 enum class RESPONSESTATE{
     OkAY,

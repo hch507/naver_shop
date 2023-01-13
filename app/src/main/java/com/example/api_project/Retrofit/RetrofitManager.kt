@@ -40,7 +40,7 @@ class RetrofitManager {
                                 var category1 = itemObject.get("category1").asString
                                 var category2 = itemObject.get("category2").asString
 
-                                var itemArray = Item(name=name, link=link, image=image, category1=category1, category2=category2)
+                                var itemArray = Item(title = name, link=link, image=image, category1=category1, category2=category2)
 
                                 itemArrayList.add(itemArray)
                             }
