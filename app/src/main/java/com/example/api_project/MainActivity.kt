@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                     responseState, responseArrayList ->
                 when(responseState){
                     RESPONSESTATE.OkAY->{
-                        Log.d(TAG, "MainActivity-onCreate() called,RESPONSESTATE.OkAY ")
+                        Log.d(TAG, "MainActivity-onCreate() called,RESPONSESTATE.OkAY ${responseArrayList} ")
 
                         val intent = Intent(this, Recycler_view::class.java)
                         //arraylist를 bundle에 담아 보내기

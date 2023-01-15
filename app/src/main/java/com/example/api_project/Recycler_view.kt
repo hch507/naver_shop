@@ -20,9 +20,12 @@ class Recycler_view : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(rbinding!!.root)
 
-        val bundle = intent.getBundleExtra("bundle_Array_List")
-        shoplist= bundle?.getSerializable("Array_List") as ArrayList<Item>
-        Log.d(TAG, "Recycler_view-onCreate() called")
+        val bundle = intent.getBundleExtra("Bundle_Array_List")
+        if (bundle != null) {
+            shoplist= bundle.getSerializable("Array_List") as ArrayList<Item>
+            Log.d(TAG, "Recycler_view-onCreate() called$shoplist")
+        }
+       // Log.d(TAG, "Recycler_view-onCreate() called $shoplist")
         itemAdapter = Adapter()
 
         itemAdapter.submit(shoplist)

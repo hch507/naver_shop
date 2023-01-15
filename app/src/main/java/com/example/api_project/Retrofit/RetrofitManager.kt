@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.api_project.Model.Item
 import com.example.api_project.utils.API
 import com.example.api_project.utils.RESPONSESTATE
+import com.example.api_project.utils.constant.charToRemove
 import com.google.gson.JsonElement
 import retrofit2.Call
 import retrofit2.Response
@@ -35,6 +36,7 @@ class RetrofitManager {
                             item.forEach {
                                 var itemObject = it.asJsonObject
                                 var name = itemObject.get("title").asString
+                                charToRemove.forEach { name=name.replace(it.toString(),"") }
                                 var link = itemObject.get("link").asString
                                 var image = itemObject.get("image").asString
                                 var category1 = itemObject.get("category1").asString
@@ -55,7 +57,7 @@ class RetrofitManager {
             }
 
             override fun onFailure(call: Call<JsonElement>, t: Throwable) {
-                Log.d(TAG, "RetrofitManager-onFailure() called")
+                Log.d(TAG, "RetrofitManager-onFailure() called$$t")
             }
 
         })
