@@ -1,4 +1,4 @@
-package com.example.api_project
+package com.example.api_project.RecyclerView
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,16 +7,18 @@ import android.view.LayoutInflater
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.api_project.Model.Item
 import com.example.api_project.RecyclerView.Adapter
+import com.example.api_project.databinding.ActivityItemViewBinding
 import com.example.api_project.databinding.ActivityRecyclerViewBinding
 import com.example.api_project.utils.constant.TAG
 
 class Recycler_view : AppCompatActivity() {
     var rbinding : ActivityRecyclerViewBinding?=null
     var shoplist =ArrayList<Item>()
+    var ibinding : ActivityItemViewBinding?=null
     lateinit var itemAdapter: Adapter
     override fun onCreate(savedInstanceState: Bundle?) {
         rbinding = ActivityRecyclerViewBinding.inflate(layoutInflater)
-
+        ibinding = ActivityItemViewBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(rbinding!!.root)
 
@@ -24,6 +26,7 @@ class Recycler_view : AppCompatActivity() {
         if (bundle != null) {
             shoplist= bundle.getSerializable("Array_List") as ArrayList<Item>
             Log.d(TAG, "Recycler_view-onCreate() called$shoplist")
+
         }
        // Log.d(TAG, "Recycler_view-onCreate() called $shoplist")
         itemAdapter = Adapter()

@@ -8,10 +8,9 @@ import com.example.api_project.Retrofit.RetrofitManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.api_project.RecyclerView.Recycler_view
 import com.example.api_project.databinding.ActivityMainBinding
 import com.example.api_project.utils.RESPONSESTATE
-import com.example.api_project.utils.constant.TAG
-import retrofit2.Retrofit
 
 class MainActivity : AppCompatActivity() {
     val TAG : String ="로그"

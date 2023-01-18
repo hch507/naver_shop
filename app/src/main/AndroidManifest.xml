@@ -17,7 +17,10 @@
         android:theme="@style/Theme.Api_project"
         tools:targetApi="31">
         <activity
-            android:name=".Recycler_view"
+            android:name=".Recycler_view_cart"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerView.Recycler_view"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
